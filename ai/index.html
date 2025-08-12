@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tiamo – Fashion & Style</title>
+  <meta name="description" content="Tiamo fashion store homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Top Info Bar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p>Free shipping on orders over $50</p>
+      <nav class="topbar__links">
+        <a href="#help">Help</a>
+        <a href="#track">Track Order</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="#" class="logo" aria-label="Tiamo Home">Tiamo</a>
+      <form class="search" role="search">
+        <input type="search" placeholder="Search for products" aria-label="Search" />
+        <button type="submit" aria-label="Search">🔍</button>
+      </form>
+      <div class="header__actions">
+        <button aria-label="Wishlist">♡</button>
+        <button aria-label="Account">👤</button>
+        <button aria-label="Cart">🛒<span class="badge" id="cart-count">0</span></button>
+      </div>
+    </div>
+    <nav class="nav" id="nav">
+      <div class="container nav__inner">
+        <a href="#new">New In</a>
+        <a href="#women">Women</a>
+        <a href="#men">Men</a>
+        <a href="#kids">Kids</a>
+        <a href="#accessories">Accessories</a>
+        <a href="#sale" class="sale">Sale</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero / Banner -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1>Own Your Style</h1>
+        <p>Discover fresh arrivals, bold looks, and timeless pieces curated for you.</p>
+        <div class="hero__actions">
+          <a href="#new" class="btn btn--primary">Shop New In</a>
+          <a href="#sale" class="btn btn--ghost">Explore Sale</a>
+        </div>
+      </div>
+      <div class="hero__media">
+        <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=1200&auto=format&fit=crop" alt="Fashion hero" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Icons -->
+  <section class="features">
+    <div class="container features__grid">
+      <div class="feature">
+        <div class="feature__icon">🚚</div>
+        <div>
+          <h4>Fast Delivery</h4>
+          <p>2–5 business days</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">↩️</div>
+        <div>
+          <h4>Easy Returns</h4>
+          <p>30-day policy</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">💳</div>
+        <div>
+          <h4>Secure Payment</h4>
+          <p>All major cards</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">🎁</div>
+        <div>
+          <h4>Gift Wrapping</h4>
+          <p>On request</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Grid -->
+  <section class="categories">
+    <div class="container">
+      <div class="section__head">
+        <h2>Shop by Category</h2>
+        <a href="#all">View All</a>
+      </div>
+      <div class="categories__grid">
+        <a class="category" href="#dresses">
+          <img src="https://images.unsplash.com/photo-1520975940071-6c703d1d4941?q=80&w=1200&auto=format&fit=crop" alt="Dresses" />
+          <span>Dresses</span>
+        </a>
+        <a class="category" href="#tops">
+          <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1200&auto=format&fit=crop" alt="Tops" />
+          <span>Tops</span>
+        </a>
+        <a class="category" href="#denim">
+          <img src="https://images.unsplash.com/photo-1520975940071-6c703d1d4941?q=80&w=1200&auto=format&fit=crop" alt="Denim" />
+          <span>Denim</span>
+        </a>
+        <a class="category" href="#shoes">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Shoes" />
+          <span>Shoes</span>
+        </a>
+        <a class="category" href="#bags">
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop" alt="Bags" />
+          <span>Bags</span>
+        </a>
+        <a class="category" href="#accessories">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop" alt="Accessories" />
+          <span>Accessories</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Sections -->
+  <section class="products" id="new">
+    <div class="container">
+      <div class="section__head">
+        <h2>New Arrivals</h2>
+        <div class="section__controls">
+          <button class="carousel__prev" data-target="#new-carousel" aria-label="Previous">‹</button>
+          <button class="carousel__next" data-target="#new-carousel" aria-label="Next">›</button>
+        </div>
+      </div>
+      <div class="carousel" id="new-carousel">
+        <!-- Product cards replicated via JS for brevity -->
+      </div>
+    </div>
+  </section>
+
+  <section class="products alt" id="best">
+    <div class="container">
+      <div class="section__head">
+        <h2>Best Sellers</h2>
+        <div class="section__controls">
+          <button class="carousel__prev" data-target="#best-carousel" aria-label="Previous">‹</button>
+          <button class="carousel__next" data-target="#best-carousel" aria-label="Next">›</button>
+        </div>
+      </div>
+      <div class="carousel" id="best-carousel"></div>
+    </div>
+  </section>
+
+  <!-- Brand Bar -->
+  <section class="brands">
+    <div class="container brands__row">
+      <img src="https://dummyimage.com/120x40/ddd/000.png&text=ZARA" alt="Brand Zara" />
+      <img src="https://dummyimage.com/120x40/ddd/000.png&text=H%26M" alt="Brand H&M" />
+      <img src="https://dummyimage.com/120x40/ddd/000.png&text=GUESS" alt="Brand Guess" />
+      <img src="https://dummyimage.com/120x40/ddd/000.png&text=MANGO" alt="Brand Mango" />
+      <img src="https://dummyimage.com/120x40/ddd/000.png&text=NIKE" alt="Brand Nike" />
+      <img src="https://dummyimage.com/120x40/ddd/000.png&text=ADIDAS" alt="Brand Adidas" />
+    </div>
+  </section>
+
+  <!-- About / Story -->
+  <section class="story">
+    <div class="container story__grid">
+      <div class="story__image">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop" alt="Atelier" />
+      </div>
+      <div class="story__content">
+        <h3>Crafted with care</h3>
+        <p>At Tiamo, we blend contemporary design with quality craftsmanship. Every piece is thoughtfully curated to help you express your unique style.</p>
+        <a class="btn btn--primary" href="#about">Read Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container newsletter__inner">
+      <h3>Join our newsletter</h3>
+      <p>Be the first to know about new drops and exclusive offers.</p>
+      <form class="newsletter__form" id="newsletter-form">
+        <input type="email" placeholder="Enter your email" aria-label="Email" required />
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </form>
+      <p class="muted" id="newsletter-msg" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="logo logo--footer" href="#">Tiamo</a>
+        <p class="muted">© <span id="year"></span> Tiamo. All rights reserved.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#women">Women</a></li>
+          <li><a href="#men">Men</a></li>
+          <li><a href="#kids">Kids</a></li>
+          <li><a href="#sale">Sale</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#shipping">Shipping</a></li>
+          <li><a href="#returns">Returns</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#ig">Instagram</a></li>
+          <li><a href="#fb">Facebook</a></li>
+          <li><a href="#tt">TikTok</a></li>
+          <li><a href="#yt">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button class="backtotop" id="backtotop" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

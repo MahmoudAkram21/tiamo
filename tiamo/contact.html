@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Tiamo</title>
+  <link rel="stylesheet" href="./css/contact.css" />
+  <link rel="stylesheet" href="./css/home.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Top Info Bar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p>Free shipping on orders over $50</p>
+      <nav class="topbar__links">
+        <a href="#help">Help</a>
+        <a href="#track">Track Order</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="#" class="logo" aria-label="Tiamo Home">
+        <img src="./assets/logo.png" alt="" />
+      </a>
+      <nav class="nav" id="nav">
+        <div class="container nav__inner">
+          <a href="#new">New In</a>
+          <a href="#women">Women</a>
+          <a href="#men">Men</a>
+          <a href="#kids">Kids</a>
+          <a href="#accessories">Accessories</a>
+          <a href="#sale" class="sale active">Sale</a>
+        </div>
+      </nav>
+      <div class="header__actions">
+        <button aria-label="login/register" class="login">
+          login/register
+        </button>
+        <button aria-label="Wishlist" class="wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+        <button aria-label="search-button" class="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <form class="search" role="search">
+            <input type="search" placeholder="Search for products" aria-label="Search" />
+          </form>
+        </button>
+        <!-- <button aria-label="Account"><i class="fa-regular fa-user"></i></button> -->
+        <button aria-label="Cart" class="cart">
+          <i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="contact-faq-section">
+      <div class="contact-faq-container">
+        <!-- FAQ / Accordion Left -->
+        <div class="faq-column">
+          <div class="faq-header">
+            <div class="faq-eyebrow">INFORMATION QUESTIONS</div>
+            <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question">Will I receive the same product that I see in the picture?</button>
+              <div class="faq-answer">Yes, all our products are as pictured unless otherwise stated.</div>
+            </div>
+            <div class="faq-item active">
+              <button class="faq-question">Where can I view my sales receipt?</button>
+              <div class="faq-answer">A velit duis convallis vestibulum duis varius vel nunc a gravida ut maecenas quisque a proin condimentum sagittis class at rhoncus primis parturient dolor scelerisque himenaeos.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">How can I return an item?</button>
+              <div class="faq-answer">Contact our support team to initiate a return.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Will you restock items indicated as “out of stock”?</button>
+              <div class="faq-answer">Some items may be restocked. Please check back later or contact us for updates.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Where can I ship my order?</button>
+              <div class="faq-answer">We ship worldwide. Shipping costs and times vary by location.</div>
+            </div>
+          </div>
+        </div>
+        <!-- Contact Form Right -->
+        <div class="contact-column">
+          <div class="contact-header">
+            <div class="contact-eyebrow">INFORMATION ABOUT US</div>
+            <h2 class="contact-title">CONTACT US FOR ANY QUESTIONS</h2>
+          </div>
+          <form class="contact-form">
+            <div class="form-row">
+              <input type="text" placeholder="Your Name" required>
+              <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-row">
+              <input type="text" placeholder="Phone Number">
+              <input type="text" placeholder="Company">
+            </div>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="contact-submit">ASK A QUESTION</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./js/about.js"></script>
+  <script src="./js/contact.js"></script>
+</body>
+</html>
