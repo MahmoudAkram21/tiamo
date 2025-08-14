@@ -21,31 +21,6 @@ if(document.querySelector('.backdrop')){
   });
 }
 
-  // Simple product data (placeholder)
-//   const products = Array.from({length:12}).map((_,i)=>({
-//     title:`Summer Look ${i+1}`,
-//     price:(19 + i).toFixed(2),
-//     img:`https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=900&auto=format&fit=crop`,
-//     isNew: i<4
-//   }));
-
-
-// function createCards(selector, items){
-//     const el = byId(selector);
-//     if(!el) return;
-//     el.innerHTML = items.map(p=>`
-//       <article class="product">
-//         <img src="${p.img}" alt="${p.title}" loading="lazy" />
-//         <div class="product__info">
-//           <h3 class="product__title">${p.title}</h3>
-//           <div class="product__meta">
-//             <span class="price">$${p.price}</span>
-//             ${p.isNew ? '<span class="badge--new">NEW</span>' : ''}
-//           </div>
-//         </div>
-//       </article>`).join('');
-//   }
-  // Our Categories slider
   if (typeof Swiper !== 'undefined' && document.querySelector('.categories__slider')){
     new Swiper('.categories__slider', {
       slidesPerView: 4,
@@ -57,15 +32,12 @@ if(document.querySelector('.backdrop')){
         prevEl: '.categories-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.3, spaceBetween: 12 },
-        640: { slidesPerView: 2, spaceBetween: 14 },
-        980: { slidesPerView: 3, spaceBetween: 16 },
-        1200: { slidesPerView: 4, spaceBetween: 18 },
+        0: { slidesPerView: 1.3, spaceBetween: 12 , slidesPerView: 1.3},
+        640: { slidesPerView: 2, spaceBetween: 14 , slidesPerView: 2},
+        980: { slidesPerView: 3, spaceBetween: 16 , slidesPerView: 3},
       },
     });
   }
-
-//   createCards('#shop', products);
 
 // Initialize Swiper for hero mini-gallery
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -76,9 +48,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
       speed: 500,
       grabCursor: true,
       breakpoints: {
-        0: { slidesPerView: 1.3, spaceBetween: 12 },
-        640: { slidesPerView: 2, spaceBetween: 14 },
-        980: { slidesPerView: 3, spaceBetween: 18 },
+        0: { slidesPerView: 1.3, spaceBetween: 12  },
+        640: { slidesPerView: 2, spaceBetween: 14 ,  slidesPerView: 2},
+        980: { slidesPerView: 3, spaceBetween: 18 , slidesPerView: 3},
       },
     });
 
@@ -103,9 +75,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
         slideShadows: true,
       },
       breakpoints: {
-        0: { },
-        640: { },
-        980: { },
+        0: { slidesPerView: 1.3, spaceBetween: 12 },
+        640: { slidesPerView: 2, spaceBetween: 14 },
+        980: { slidesPerView: 3, spaceBetween: 18 },
       },
     });
   }

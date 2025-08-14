@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/shop.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop - Tiamo</title>
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/shop.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
   <!-- Top Info Bar and Header (reuse from other pages) -->
   <div class="topbar">
@@ -20,6 +22,7 @@
       </nav>
     </div>
   </div>
+
   <header class="header" id="header">
     <div class="container header__inner">
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -51,121 +54,298 @@
             <input type="search" placeholder="Search for products" aria-label="Search" />
           </form>
         </button>
-        <button aria-label="Cart" class="cart">
-          <i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cart-count">0</span>
+        <button aria-label="Cart" class="cart has-items">
+          <i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cart-count">1</span>
+
+          <!-- Mini Cart Popup -->
+          <div class="mini-cart-popup">
+            <div class="mini-cart-header">
+              <h3 class="mini-cart-title">Shopping Cart</h3>
+            </div>
+
+            <div class="mini-cart-items">
+              <div class="mini-cart-item">
+                <div class="mini-cart-item-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=100&auto=format&fit=crop"
+                    alt="Classic wooden chair">
+                </div>
+                <div class="mini-cart-item-details">
+                  <h4 class="mini-cart-item-name">Classic wooden chair</h4>
+                  <div class="mini-cart-item-price">1 x 299,00 EGP</div>
+                </div>
+                <button class="mini-cart-item-remove" title="Remove item">
+                  <i class="fa-solid fa-times"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="mini-cart-subtotal">
+              <span class="subtotal-label">Subtotal:</span>
+              <span class="subtotal-amount">299,00 EGP</span>
+            </div>
+
+            <div class="mini-cart-actions">
+              <a href="cart.html" class="mini-cart-btn view-cart">VIEW CART</a>
+              <a href="checkout.html" class="mini-cart-btn checkout">CHECKOUT</a>
+            </div>
+          </div>
         </button>
       </div>
     </div>
   </header>
+
   <main>
-    <h1 style="text-align:center; margin: 32px 0 18px 0; font-size:2.2rem; font-weight:900; letter-spacing:0.04em;">Shop</h1>
-    <div class="shop-container" style="display:flex; gap:32px; max-width:1200px; margin:0 auto; align-items:flex-start;">
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Shop</span>
+        </nav>
+      </div>
+    </div>
+
+    <div class="shop-container">
+      <!-- Mobile Filter Toggle Button -->
+      <button id="filter-toggle" class="filter-toggle" aria-label="Open filters">
+        <i class="fa-solid fa-sliders"></i> Filters
+      </button>
+
+      <!-- Sidebar Overlay -->
+      <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
       <!-- Sidebar Filters -->
-      <aside class="shop-sidebar" style="flex:0 0 220px;">
-  <form class="sidebar-filters" method="get" action="shop.html">
-    <!-- Stock Status -->
-    <div class="shop-filter">
-      <div class="filter-title">STOCK STATUS</div>
-      <label class="filter-checkbox"><input type="checkbox" name="on_sale" value="1"> On sale</label><br>
-      <label class="filter-checkbox"><input type="checkbox" name="in_stock" value="1"> In stock</label>
-    </div>
-    <!-- Top Rated Products -->
-    <div class="shop-filter top-rated-widget" style="border:none; padding-bottom:0;">
-      <div class="top-rated-title"><span>TOP RATED PRODUCTS</span></div>
-      <div class="top-rated-list">
-        <div class="top-rated-item">
-          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=80&auto=format&fit=crop" alt="Decoration wooden present">
-          <div>
-            <div class="top-rated-name">Decoration wooden present</div>
-            <div class="top-rated-stars">
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
+      <aside id="shop-sidebar" class="shop-sidebar">
+        <button class="sidebar-close" aria-label="Close filters">
+          <i class="fa-solid fa-times"></i>
+        </button>
+        <form class="sidebar-filters" method="get" action="shop.html">
+          <!-- Price Filter -->
+          <div class="shop-filter">
+            <div class="filter-title">FILTER BY PRICE</div>
+            <div class="price-range-container">
+              <input type="range" name="price" id="price-range" min="80" max="600" value="600" class="price-range" />
+              <div class="price-range-labels">
+                <span>80 EGP</span>
+                <span>600 EGP</span>
+              </div>
+              <button type="button" class="filter-btn">FILTER</button>
             </div>
-            <div class="top-rated-price">89,00 EGP</div>
           </div>
-        </div>
-        <div class="top-rated-item">
-          <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=80&auto=format&fit=crop" alt="Wine bottle lantern">
-          <div>
-            <div class="top-rated-name">Wine bottle lantern</div>
-            <div class="top-rated-stars">
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-regular fa-star" style="color:#ffc700"></i>
+
+          <!-- Color Filter -->
+          <div class="shop-filter">
+            <div class="filter-title">FILTER BY COLOR</div>
+            <label class="filter-color">
+              <input type="checkbox" name="color" value="beige" />
+              <span class="color-dot" style="background: #f5e6c3"></span>
+              Beige <span class="count">4</span>
+            </label>
+            <label class="filter-color">
+              <input type="checkbox" name="color" value="black" />
+              <span class="color-dot" style="background: #222"></span>
+              Black <span class="count">5</span>
+            </label>
+            <label class="filter-color">
+              <input type="checkbox" name="color" value="blue" />
+              <span class="color-dot" style="background: #4a90e2"></span>
+              Blue <span class="count">4</span>
+            </label>
+            <label class="filter-color">
+              <input type="checkbox" name="color" value="brown" />
+              <span class="color-dot" style="background: #b97a56"></span>
+              Brown <span class="count">4</span>
+            </label>
+            <label class="filter-color">
+              <input type="checkbox" name="color" value="yellow" />
+              <span class="color-dot" style="background: #ffe600"></span>
+              Yellow <span class="count">3</span>
+            </label>
+          </div>
+
+          <!-- Size Filter -->
+          <div class="shop-filter">
+            <div class="filter-title">FILTER BY SIZE</div>
+            <label class="filter-size">
+              L <input type="checkbox" name="size" value="L" />
+              <span class="count">1</span>
+            </label>
+            <label class="filter-size">
+              M <input type="checkbox" name="size" value="M" />
+              <span class="count">3</span>
+            </label>
+            <label class="filter-size">
+              S <input type="checkbox" name="size" value="S" />
+              <span class="count">2</span>
+            </label>
+            <label class="filter-size">
+              XS <input type="checkbox" name="size" value="XS" />
+              <span class="count">1</span>
+            </label>
+          </div>
+
+          <!-- Brand Filter -->
+          <div class="shop-filter">
+            <div class="filter-title">FILTER BY BRAND</div>
+            <div class="filter-brand-grid">
+              <div class="brand-col">
+                <label class="brand-item">
+                  <input type="checkbox" name="brand" value="alessi" />
+                  <span class="brand-name">ALESSI</span>
+                </label>
+                <label class="brand-item">
+                  <input type="checkbox" name="brand" value="hay" />
+                  <span class="brand-name">HAY</span>
+                </label>
+                <label class="brand-item">
+                  <input type="checkbox" name="brand" value="kloeber" />
+                  <span class="brand-name">KLÖBER</span>
+                </label>
+                <label class="brand-item">
+                  <input type="checkbox" name="brand" value="magisso" />
+                  <span class="brand-name">magisso</span>
+                </label>
+              </div>
+              <div class="brand-col">
+                <label class="brand-item">
+                  <input type="checkbox" name="brand" value="evasolo" />
+                  <span class="brand-name">eva solo</span>
+                </label>
+                <label class="brand-item">
+                  <input type="checkbox" name="brand" value="josephjoseph" />
+                  <span class="brand-name">joseph joseph</span>
+                </label>
+                <label class="brand-item">
+                  <input type="checkbox" name="brand" value="louispoulsen" />
+                  <span class="brand-name">louis poulsen</span>
+                </label>
+                <label class="brand-item">
+                  <input type="checkbox" name="brand" value="vitra" />
+                  <span class="brand-name">vitra</span>
+                </label>
+              </div>
             </div>
-            <div class="top-rated-price">399,00 EGP</div>
           </div>
-        </div>
-        <div class="top-rated-item">
-          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=80&auto=format&fit=crop" alt="iPhone dock">
-          <div>
-            <div class="top-rated-name">iPhone dock</div>
-            <div class="top-rated-stars">
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-solid fa-star" style="color:#ffc700"></i>
-              <i class="fa-regular fa-star" style="color:#ffc700"></i>
+
+          <!-- Stock Status -->
+          <div class="shop-filter">
+            <div class="filter-title">STOCK STATUS</div>
+            <label class="filter-checkbox">
+              <input type="checkbox" name="on_sale" value="1" id="sale-filter" /> On sale
+              <span class="sale-count">(3)</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" name="in_stock" value="1" id="stock-filter" /> In stock
+              <span class="stock-count">(12)</span>
+            </label>
+          </div>
+
+          <!-- Back to Sale Section -->
+          <div class="shop-filter back-to-sale-section">
+            <div class="filter-title">BACK TO SALE</div>
+            <div class="sale-highlights">
+              <div class="sale-highlight-item">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=80&auto=format&fit=crop"
+                  alt="iPhone dock" />
+                <div class="sale-highlight-content">
+                  <div class="sale-highlight-name">iPhone dock</div>
+                  <div class="sale-highlight-price">
+                    <span class="old-price">300,00 EGP</span>
+                    <span class="sale-price">349,00 EGP</span>
+                  </div>
+                  <div class="sale-badge">-13%</div>
+                </div>
+              </div>
+              <div class="sale-highlight-item">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=80&auto=format&fit=crop"
+                  alt="Decoration wooden present" />
+                <div class="sale-highlight-content">
+                  <div class="sale-highlight-name">Decoration wooden present</div>
+                  <div class="sale-highlight-price">
+                    <span class="sale-price">89,00 EGP</span>
+                  </div>
+                  <div class="sale-badge">Best Seller</div>
+                </div>
+              </div>
             </div>
-            <div class="top-rated-price"><span class="old">399,00 EGP</span> 349,00 EGP</div>
+            <button type="button" class="view-all-sale-btn">View All Sale Items</button>
           </div>
-        </div>
-      </div>
-    </div>
-    <!-- Price -->
-    <div class="shop-filter">
-      <div class="filter-title">FILTER BY PRICE</div>
-      <input type="range" name="price" min="80" max="600" value="300" style="width:100%;">
-      <div style="font-size:12px; margin:6px 0 10px 0;">Price: 80 EGP – 600 EGP</div>
-    </div>
-    <!-- Color -->
-    <div class="shop-filter">
-      <div class="filter-title">FILTER BY COLOR</div>
-      <label class="filter-color"><input type="checkbox" name="color" value="beige"><span style="background:#f5e6c3;"></span> Beige <span class="count">4</span></label>
-      <label class="filter-color"><input type="checkbox" name="color" value="black"><span style="background:#222;"></span> Black <span class="count">3</span></label>
-      <label class="filter-color"><input type="checkbox" name="color" value="blue"><span style="background:#4a90e2;"></span> Blue <span class="count">4</span></label>
-      <label class="filter-color"><input type="checkbox" name="color" value="brown"><span style="background:#b97a56;"></span> Brown <span class="count">4</span></label>
-      <label class="filter-color"><input type="checkbox" name="color" value="yellow"><span style="background:#ffe600;"></span> Yellow <span class="count">3</span></label>
-    </div>
-    <!-- Size -->
-    <div class="shop-filter">
-      <div class="filter-title">FILTER BY SIZE</div>
-      <label class="filter-size">L <input type="checkbox" name="size" value="L"><span class="count">1</span></label>
-      <label class="filter-size">M <input type="checkbox" name="size" value="M"><span class="count">2</span></label>
-      <label class="filter-size">S <input type="checkbox" name="size" value="S"><span class="count">2</span></label>
-      <label class="filter-size">XS <input type="checkbox" name="size" value="XS"><span class="count">1</span></label>
-    </div>
-    <!-- Brand -->
-    <div class="shop-filter">
-      <div class="filter-title">FILTER BY BRAND</div>
-      <div class="filter-brand-grid">
-        <div class="brand-col">
-          <label><input type="checkbox" name="brand" value="alessi"><img class="brand-img" src="./images/brands/alessi.png" alt="ALESSI logo"></label>
-          <label><input type="checkbox" name="brand" value="hay"><img class="brand-img" src="./images/brands/hay.png" alt="HAY logo"></label>
-          <label><input type="checkbox" name="brand" value="kloeber"><img class="brand-img" src="./images/brands/kloeber.png" alt="KLÖBER logo"></label>
-          <label><input type="checkbox" name="brand" value="magisso"><img class="brand-img" src="./images/brands/magisso.png" alt="magisso logo"></label>
-        </div>
-        <div class="brand-col">
-          <label><input type="checkbox" name="brand" value="evasolo"><img class="brand-img" src="./images/brands/evasolo.png" alt="eva solo logo"></label>
-          <label><input type="checkbox" name="brand" value="josephjoseph"><img class="brand-img" src="./images/brands/josephjoseph.png" alt="joseph joseph logo"></label>
-          <label><input type="checkbox" name="brand" value="louispoulsen"><img class="brand-img" src="./images/brands/louispoulsen.png" alt="louis poulsen logo"></label>
-          <label><input type="checkbox" name="brand" value="vitra"><img class="brand-img" src="./images/brands/vitra.png" alt="vitra logo"></label>
-        </div>
-      </div>
-    </div>
-    <button type="submit" class="btn" style="font-size:13px; padding:4px 18px; margin-top:18px; width:100%;">Apply Filters</button>
-  </form>
-</aside>
+
+          <!-- Top Rated Products -->
+          <div class="shop-filter top-rated-widget">
+            <div class="top-rated-title">TOP RATED PRODUCTS</div>
+            <div class="top-rated-list">
+              <div class="top-rated-item">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=80&auto=format&fit=crop"
+                  alt="Decoration wooden present" />
+                <div class="top-rated-content">
+                  <div class="top-rated-name">Decoration wooden present</div>
+                  <div class="top-rated-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <div class="top-rated-price">89,00 EGP</div>
+                </div>
+              </div>
+              <div class="top-rated-item">
+                <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=80&auto=format&fit=crop"
+                  alt="Wine bottle lantern" />
+                <div class="top-rated-content">
+                  <div class="top-rated-name">Wine bottle lantern</div>
+                  <div class="top-rated-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                  <div class="top-rated-price">399,00 EGP</div>
+                </div>
+              </div>
+              <div class="top-rated-item">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=80&auto=format&fit=crop"
+                  alt="iPhone dock" />
+                <div class="top-rated-content">
+                  <div class="top-rated-name">iPhone dock</div>
+                  <div class="top-rated-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <div class="top-rated-price">
+                    <span class="old-price">300,00 EGP</span> 349,00 EGP
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </aside>
+
       <!-- Product Grid -->
-      <section class="shop-products" style="flex:1;">
-        <div class="shop-toolbar" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
-          <div>Show: <b>9</b> / 12 / 18 / 24</div>
+      <section class="shop-products">
+        <!-- Filter Summary -->
+        <div class="filter-summary" id="filter-summary">
+          <div class="filter-summary-content">
+            <span class="filter-summary-text">Showing all products</span>
+            <button type="button" class="clear-filters-btn" id="clear-filters-btn" style="display: none;">
+              <i class="fa-solid fa-times"></i> Clear all filters
+            </button>
+          </div>
+          <div class="active-filters" id="active-filters"></div>
+        </div>
+
+        <div class="shop-toolbar">
+          <div class="show-options">
+            Show: <b>9</b> / 12 / 18 / 24
+          </div>
           <div class="view-toggle">
             <button id="grid-view-btn" class="view-btn active" type="button" title="Grid View">
               <i class="fa-solid fa-table-cells"></i>
@@ -174,92 +354,472 @@
               <i class="fa-solid fa-list"></i>
             </button>
           </div>
-          <div>Default sorting <i class="fa-solid fa-chevron-down" style="font-size:12px;"></i></div>
+          <div class="sort-dropdown">
+            <button class="sort-dropdown__toggle" aria-expanded="false" aria-haspopup="true">
+              <span>Default sorting</span>
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <ul class="sort-dropdown__menu" role="menu">
+              <li role="none">
+                <button type="button" role="menuitem" class="sort-dropdown__item active">
+                  Default sorting
+                </button>
+              </li>
+              <li role="none">
+                <button type="button" role="menuitem" class="sort-dropdown__item">
+                  Sort by popularity
+                </button>
+              </li>
+              <li role="none">
+                <button type="button" role="menuitem" class="sort-dropdown__item">
+                  Sort by average rating
+                </button>
+              </li>
+              <li role="none">
+                <button type="button" role="menuitem" class="sort-dropdown__item">
+                  Sort by latest
+                </button>
+              </li>
+              <li role="none">
+                <button type="button" role="menuitem" class="sort-dropdown__item">
+                  Sort by price: low to high
+                </button>
+              </li>
+              <li role="none">
+                <button type="button" role="menuitem" class="sort-dropdown__item">
+                  Sort by price: high to low
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div id="products-container" class="shop-grid grid-view" style="display:grid; grid-template-columns:repeat(3,1fr); gap:32px;">
-          <!-- Example Product Cards -->
-          <div class="shop-card">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt="White Shirt" style="width:100%; border-radius:10px;">
-            <div class="shop-card-title">Auge adipising eiusmod</div>
-            <div class="shop-card-category">Furniture</div>
-            <div class="shop-card-price">199.00 EGP</div>
-          </div>
-          <div class="shop-card">
-            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&auto=format&fit=crop" alt="Black Top" style="width:100%; border-radius:10px;">
-            <div class="shop-card-title">Classic wooden chair</div>
-            <div class="shop-card-category">Furniture</div>
-            <div class="shop-card-price">299.00 EGP</div>
-            <span class="shop-badge new">NEW</span>
-          </div>
-          <div class="shop-card">
-            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=400&auto=format&fit=crop" alt="Blue Top" style="width:100%; border-radius:10px;">
-            <div class="shop-card-title">Decoration wooden present</div>
-            <div class="shop-card-category">Cooking</div>
-            <div class="shop-card-price">89.00 EGP</div>
-            <span class="shop-badge star"><i class="fa-solid fa-star" style="color:#ffc700;"></i> 5</span>
-          </div>
-          <div class="shop-card">
-            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=400&auto=format&fit=crop" alt="Purple Top" style="width:100%; border-radius:10px;">
-            <div class="shop-card-title">Eames lounge chair</div>
-            <div class="shop-card-category">Furniture</div>
-            <div class="shop-card-price">399.00 EGP</div>
-          </div>
-          <div class="shop-card">
-            <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=400&auto=format&fit=crop" alt="Beige Top" style="width:100%; border-radius:10px;">
-            <div class="shop-card-title">Eames plastic side chair</div>
-            <div class="shop-card-category">Furniture</div>
-            <div class="shop-card-price">99.00 EGP</div>
-          </div>
-          <div class="shop-card">
-            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=400&auto=format&fit=crop" alt="Red Top" style="width:100%; border-radius:10px;">
-            <div class="shop-card-title">Henectus tincidunt</div>
-            <div class="shop-card-category">Accessories</div>
-            <div class="shop-card-price">429.00 EGP</div>
-            <span class="shop-badge discount">-13%</span>
-          </div>
+
+        <div id="products-container" class="shop-grid grid-view">
+          <!-- Product 1 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=400&auto=format&fit=crop"
+                alt="Augue adipiscing euismod" />
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Augue adipiscing euismod</h3>
+              <span class="product-card__category">Furniture</span>
+              <div class="product-card__price">199,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=400&auto=format&fit=crop"
+                alt="Classic wooden chair" />
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Classic wooden chair</h3>
+              <span class="product-card__category">Furniture</span>
+              <div class="product-card__price">299,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=400&auto=format&fit=crop"
+                alt="Decoration wooden present" />
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Decoration wooden present</h3>
+              <span class="product-card__category">Cooking</span>
+              <div class="product-card__price">89,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=400&auto=format&fit=crop"
+                alt="Eames lounge chair" />
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Eames lounge chair</h3>
+              <span class="product-card__category">Furniture</span>
+              <div class="product-card__price">399,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 5 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop"
+                alt="Eames plastic side chair" />
+              <div class="product-label product-label--new">NEW</div>
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Eames plastic side chair</h3>
+              <span class="product-card__category">Furniture</span>
+              <div class="product-card__price">99,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 6 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=400&auto=format&fit=crop"
+                alt="Henectus tincidunt" />
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Henectus tincidunt</h3>
+              <span class="product-card__category">Accessories</span>
+              <div class="product-card__price">429,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 7 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop"
+                alt="iPhone dock" />
+              <div class="product-label product-label--sale">-13%</div>
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">iPhone dock</h3>
+              <span class="product-card__category">Toys</span>
+              <div class="product-card__price">
+                <span class="old-price">300,00 EGP</span>
+                <span class="current-price">349,00 EGP</span>
+              </div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 8 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=400&auto=format&fit=crop"
+                alt="Ornare auctor" />
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Ornare auctor</h3>
+              <span class="product-card__category">Accessories</span>
+              <div class="product-card__price">429,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 9 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=400&auto=format&fit=crop"
+                alt="Panton tunior chair" />
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Panton tunior chair</h3>
+              <span class="product-card__category">Clocks</span>
+              <div class="product-card__price">199,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 10 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=400&auto=format&fit=crop"
+                alt="Smart watches wood edition" />
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Smart watches wood edition</h3>
+              <span class="product-card__category">Electronics</span>
+              <div class="product-card__price">599,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 11 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=400&auto=format&fit=crop"
+                alt="Modern design lamp" />
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Modern design lamp</h3>
+              <span class="product-card__category">Lighting</span>
+              <div class="product-card__price">299,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 12 -->
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=400&auto=format&fit=crop"
+                alt="Wine bottle lantern" />
+              <div class="product-label product-label--hot">HOT</div>
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Wine bottle lantern</h3>
+              <span class="product-card__category">Home Decor</span>
+              <div class="product-card__price">399,00 EGP</div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 13 - Sale Item -->
+          <article class="product-card sale-product">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=400&auto=format&fit=crop"
+                alt="Modern coffee table" />
+              <div class="product-label product-label--sale">-25%</div>
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Modern coffee table</h3>
+              <span class="product-card__category">Furniture</span>
+              <div class="product-card__price">
+                <span class="old-price">450,00 EGP</span>
+                <span class="current-price">337,50 EGP</span>
+              </div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 14 - Sale Item -->
+          <article class="product-card sale-product">
+            <div class="product-card__media">
+              <img class="product-card__img"
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop"
+                alt="Designer wall clock" />
+              <div class="product-label product-label--sale">-30%</div>
+              <div class="product-card__actions">
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Designer wall clock</h3>
+              <span class="product-card__category">Home Decor</span>
+              <div class="product-card__price">
+                <span class="old-price">280,00 EGP</span>
+                <span class="current-price">196,00 EGP</span>
+              </div>
+              <a href="#" class="product-card__cta">Add To Cart</a>
+            </div>
+          </article>
         </div>
       </section>
     </div>
   </main>
-  <!-- Optionally add a footer here -->
-  <footer class="site-footer">
-    <!-- ...footer content... -->
-  </footer>
-  <link rel="stylesheet" href="./css/home.css" />
-  <link rel="stylesheet" href="./css/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const gridViewBtn = document.getElementById('grid-view-btn');
-        const listViewBtn = document.getElementById('list-view-btn');
-        const productsContainer = document.getElementById('products-container');
-        
-        // Set initial active view (grid view by default)
-        const savedView = localStorage.getItem('shopView') || 'grid';
-        setView(savedView);
-        
-        // Add click event listeners
-        gridViewBtn.addEventListener('click', () => setView('grid'));
-        listViewBtn.addEventListener('click', () => setView('list'));
-        
-        function setView(view) {
-          // Update UI
-          if (view === 'grid') {
-            productsContainer.classList.remove('list-view');
-            productsContainer.classList.add('grid-view');
-            gridViewBtn.classList.add('active');
-            listViewBtn.classList.remove('active');
-          } else {
-            productsContainer.classList.remove('grid-view');
-            productsContainer.classList.add('list-view');
-            listViewBtn.classList.add('active');
-            gridViewBtn.classList.remove('active');
-          }
-          
-          // Save preference
-          localStorage.setItem('shopView', view);
-        }
-      });
-    </script>
-  </body>
+
+  <script src="./js/shop.js"></script>
+</body>
+
 </html>

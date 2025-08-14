@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Wishlist - Tiamo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/wishlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <p>Free shipping on orders over $50</p>
+            <nav class="topbar__links">
+                <a href="#help">Help</a>
+                <a href="#track">Track Order</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="#" class="logo" aria-label="Tiamo Home">
+                <img src="./assets/logo.png" alt="" />
+            </a>
+            <nav class="nav" id="nav">
+                <div class="container nav__inner">
+                    <a href="#new">New In</a>
+                    <a href="#women">Women</a>
+                    <a href="#men">Men</a>
+                    <a href="#kids">Kids</a>
+                    <a href="#accessories">Accessories</a>
+                    <a href="#sale" class="sale active">Sale</a>
+                </div>
+            </nav>
+            <div class="header__actions">
+                <button aria-label="login/register" class="login">
+                    login/register
+                </button>
+                <button aria-label="Wishlist" class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <button aria-label="search-button" class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <form class="search" role="search">
+                        <input type="search" placeholder="Search for products" aria-label="Search" />
+                    </form>
+                </button>
+                <!-- <button aria-label="Account"><i class="fa-regular fa-user"></i></button> -->
+                <button aria-label="Cart" class="cart has-items">
+                    <i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cart-count">1</span>
+
+                    <!-- Mini Cart Popup -->
+                    <div class="mini-cart-popup">
+                        <div class="mini-cart-header">
+                            <h3 class="mini-cart-title">Shopping Cart</h3>
+                        </div>
+
+                        <div class="mini-cart-items">
+                            <div class="mini-cart-item">
+                                <div class="mini-cart-item-image">
+                                    <img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=100&auto=format&fit=crop"
+                                        alt="Classic wooden chair">
+                                </div>
+                                <div class="mini-cart-item-details">
+                                    <h4 class="mini-cart-item-name">Classic wooden chair</h4>
+                                    <div class="mini-cart-item-price">1 x 299,00 EGP</div>
+                                </div>
+                                <button class="mini-cart-item-remove" title="Remove item">
+                                    <i class="fa-solid fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mini-cart-subtotal">
+                            <span class="subtotal-label">Subtotal:</span>
+                            <span class="subtotal-amount">299,00 EGP</span>
+                        </div>
+
+                        <div class="mini-cart-actions">
+                            <a href="cart.html" class="mini-cart-btn view-cart">VIEW CART</a>
+                            <a href="checkout.html" class="mini-cart-btn checkout">CHECKOUT</a>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="backdrop"></div>
+    <aside class="menu-sidebar" id="sidebar">
+        <div>
+            <form role="search">
+                <input type="search" placeholder="Search for products" aria-label="Search" />
+            </form>
+
+            <div class="tabs">
+                <button class="tab active" data-target="#menu-sidebar">Menu</button>
+                <button class="tab" data-target="#categories-sidebar">
+                    Categories
+                </button>
+            </div>
+            <div class="tab-content" id="menu-sidebar">
+                <nav class="sidebar-nav" id="sidebar-nav">
+                    <div class="container nav__inner">
+                        <a href="#new">New In</a>
+                        <a href="#women">Women</a>
+                        <a href="#men">Men</a>
+                        <a href="#kids">Kids</a>
+                        <a href="#accessories">Accessories</a>
+                        <a href="#sale" class="sale active">Sale</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="tab-content" id="categories-sidebar">
+                <nav class="sidebar-nav" id="sidebar-nav">
+                    <div class="container nav__inner">
+                        <a href="#new">New In</a>
+                        <a href="#women">Women</a>
+                        <a href="#men">Men</a>
+                        <a href="#kids">Kids</a>
+                        <a href="#accessories">Accessories</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </aside>
+    <!-- end Header -->
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Wishlist</h1>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Wishlist</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Wishlist Section -->
+        <section class="wishlist-section">
+            <div class="container">
+                <div class="wishlist-header">
+                    <h2 class="wishlist-title">YOUR PRODUCTS WISHLIST</h2>
+                    <div class="wishlist-controls">
+                        <button type="button" class="control-btn remove-all-btn" id="remove-all-btn">
+                            <i class="fa-solid fa-times"></i>
+                            Remove
+                        </button>
+                        <button type="button" class="control-btn deselect-all-btn" id="deselect-all-btn">
+                            <i class="fa-solid fa-check"></i>
+                            Deselect all
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Wishlist Items -->
+                <div class="wishlist-items" id="wishlist-items">
+                    <!-- Wishlist Item -->
+                    <div class="wishlist-item" data-product-id="1">
+                        <div class="item-controls">
+                            <button type="button" class="remove-item-btn" title="Remove item">
+                                <i class="fa-solid fa-times"></i>
+                                Remove
+                            </button>
+                            <label class="item-checkbox">
+                                <input type="checkbox" class="item-select" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=400&auto=format&fit=crop"
+                                    alt="Classic wooden chair">
+                                <div class="image-overlay">
+                                    <button class="overlay-btn compare-btn" title="Compare">
+                                        <i class="fa-solid fa-right-left"></i>
+                                    </button>
+                                    <button class="overlay-btn quick-view-btn" title="Quick View">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="item-info">
+                                <h3 class="item-title">Classic wooden chair</h3>
+                                <span class="item-category">Furniture</span>
+                                <a href="#" class="add-to-cart-btn">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Item -->
+                    <div class="wishlist-item" data-product-id="2">
+                        <div class="item-controls">
+                            <button type="button" class="remove-item-btn" title="Remove item">
+                                <i class="fa-solid fa-times"></i>
+                                Remove
+                            </button>
+                            <label class="item-checkbox">
+                                <input type="checkbox" class="item-select">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=400&auto=format&fit=crop"
+                                    alt="Modern design lamp">
+                                <div class="image-overlay">
+                                    <button class="overlay-btn compare-btn" title="Compare">
+                                        <i class="fa-solid fa-right-left"></i>
+                                    </button>
+                                    <button class="overlay-btn quick-view-btn" title="Quick View">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="item-info">
+                                <h3 class="item-title">Modern design lamp</h3>
+                                <span class="item-category">Lighting</span>
+                                <a href="#" class="add-to-cart-btn">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Item -->
+                    <div class="wishlist-item" data-product-id="3">
+                        <div class="item-controls">
+                            <button type="button" class="remove-item-btn" title="Remove item">
+                                <i class="fa-solid fa-times"></i>
+                                Remove
+                            </button>
+                            <label class="item-checkbox">
+                                <input type="checkbox" class="item-select">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=400&auto=format&fit=crop"
+                                    alt="Decoration wooden present">
+                                <div class="image-overlay">
+                                    <button class="overlay-btn compare-btn" title="Compare">
+                                        <i class="fa-solid fa-right-left"></i>
+                                    </button>
+                                    <button class="overlay-btn quick-view-btn" title="Quick View">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="item-info">
+                                <h3 class="item-title">Decoration wooden present</h3>
+                                <span class="item-category">Cooking</span>
+                                <a href="#" class="add-to-cart-btn">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty Wishlist State -->
+                <div class="empty-wishlist" id="empty-wishlist" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <h3>Your wishlist is empty</h3>
+                    <p>Start adding products you love to your wishlist</p>
+                    <a href="shop.html" class="shop-now-btn">Shop Now</a>
+                </div>
+
+                <!-- Selected Items Actions -->
+                <div class="selected-actions" id="selected-actions" style="display: none;">
+                    <div class="selected-count">
+                        <span id="selected-count">0</span> items selected
+                    </div>
+                    <div class="action-buttons">
+                        <button type="button" class="action-btn add-selected-btn" id="add-selected-btn">
+                            <i class="fa-solid fa-shopping-cart"></i>
+                            Add Selected to Cart
+                        </button>
+                        <button type="button" class="action-btn remove-selected-btn" id="remove-selected-btn">
+                            <i class="fa-solid fa-trash"></i>
+                            Remove Selected
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Tiamo</h3>
+                    <p>Discover unique and beautiful products for your home and lifestyle.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tiamo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/wishlist.js"></script>
+</body>
+
+</html>

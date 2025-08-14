@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Tiamo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Top Info Bar -->
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <p>Free shipping on orders over $50</p>
+            <nav class="topbar__links">
+                <a href="#help">Help</a>
+                <a href="#track">Track Order</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="#" class="logo" aria-label="Tiamo Home">
+                <img src="./assets/logo.png" alt="" />
+            </a>
+            <nav class="nav" id="nav">
+                <div class="container nav__inner">
+                    <a href="#new">New In</a>
+                    <a href="#women">Women</a>
+                    <a href="#men">Men</a>
+                    <a href="#kids">Kids</a>
+                    <a href="#accessories">Accessories</a>
+                    <a href="#sale" class="sale active">Sale</a>
+                </div>
+            </nav>
+            <div class="header__actions">
+                <button aria-label="login/register" class="login">
+                    login/register
+                </button>
+                <button aria-label="Wishlist" class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <button aria-label="search-button" class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <form class="search" role="search">
+                        <input type="search" placeholder="Search for products" aria-label="Search" />
+                    </form>
+                </button>
+                <!-- <button aria-label="Account"><i class="fa-regular fa-user"></i></button> -->
+                <button aria-label="Cart" class="cart has-items">
+                    <i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cart-count">1</span>
+
+                    <!-- Mini Cart Popup -->
+                    <div class="mini-cart-popup">
+                        <div class="mini-cart-header">
+                            <h3 class="mini-cart-title">Shopping Cart</h3>
+                        </div>
+
+                        <div class="mini-cart-items">
+                            <div class="mini-cart-item">
+                                <div class="mini-cart-item-image">
+                                    <img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=100&auto=format&fit=crop"
+                                        alt="Classic wooden chair">
+                                </div>
+                                <div class="mini-cart-item-details">
+                                    <h4 class="mini-cart-item-name">Classic wooden chair</h4>
+                                    <div class="mini-cart-item-price">1 x 299,00 EGP</div>
+                                </div>
+                                <button class="mini-cart-item-remove" title="Remove item">
+                                    <i class="fa-solid fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mini-cart-subtotal">
+                            <span class="subtotal-label">Subtotal:</span>
+                            <span class="subtotal-amount">299,00 EGP</span>
+                        </div>
+
+                        <div class="mini-cart-actions">
+                            <a href="cart.html" class="mini-cart-btn view-cart">VIEW CART</a>
+                            <a href="checkout.html" class="mini-cart-btn checkout">CHECKOUT</a>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="backdrop"></div>
+    <aside class="menu-sidebar" id="sidebar">
+        <div>
+            <form role="search">
+                <input type="search" placeholder="Search for products" aria-label="Search" />
+            </form>
+
+            <div class="tabs">
+                <button class="tab active" data-target="#menu-sidebar">Menu</button>
+                <button class="tab" data-target="#categories-sidebar">
+                    Categories
+                </button>
+            </div>
+            <div class="tab-content" id="menu-sidebar">
+                <nav class="sidebar-nav" id="sidebar-nav">
+                    <div class="container nav__inner">
+                        <a href="#new">New In</a>
+                        <a href="#women">Women</a>
+                        <a href="#men">Men</a>
+                        <a href="#kids">Kids</a>
+                        <a href="#accessories">Accessories</a>
+                        <a href="#sale" class="sale active">Sale</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="tab-content" id="categories-sidebar">
+                <nav class="sidebar-nav" id="sidebar-nav">
+                    <div class="container nav__inner">
+                        <a href="#new">New In</a>
+                        <a href="#women">Women</a>
+                        <a href="#men">Men</a>
+                        <a href="#kids">Kids</a>
+                        <a href="#accessories">Accessories</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </aside>
+    <!-- end Header -->
+
+    <main class="checkout-container">
+        <div class="checkout-header">
+            <h1>Checkout</h1>
+        </div>
+
+        <div class="checkout-content">
+            <!-- Left Section - Billing Details -->
+            <div class="billing-section">
+                <!-- Coupon Banner -->
+                <div class="coupon-banner">
+                    <p>Have a coupon? <a href="#" class="coupon-link">Click here to enter your code</a></p>
+                </div>
+
+                <!-- Billing Details Form -->
+                <div class="form-section">
+                    <h2>BILLING DETAILS</h2>
+                    <form class="billing-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company name (optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country / Region *</label>
+                            <select id="country" name="country" required>
+                                <option value="egypt" selected>Egypt</option>
+                                <option value="usa">United States</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="canada">Canada</option>
+                                <option value="australia">Australia</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Street address *</label>
+                            <input type="text" id="address" name="address" placeholder="House number and street name"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="apartment">Apartment, suite, unit, etc. (optional)</label>
+                            <input type="text" id="apartment" name="apartment">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Town / City *</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State / County *</label>
+                                <select id="state" name="state" required>
+                                    <option value="cairo" selected>Cairo</option>
+                                    <option value="alexandria">Alexandria</option>
+                                    <option value="giza">Giza</option>
+                                    <option value="sharm-el-sheikh">Sharm El Sheikh</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postcode">Postcode / ZIP *</label>
+                            <input type="text" id="postcode" name="postcode" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="form-section">
+                    <h2>ADDITIONAL INFORMATION</h2>
+                    <div class="form-group">
+                        <label for="orderNotes">Order notes (optional)</label>
+                        <textarea id="orderNotes" name="orderNotes" rows="4"
+                            placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section - Order Summary -->
+            <div class="order-section">
+                <h2>YOUR ORDER</h2>
+
+                <div class="order-summary">
+                    <div class="order-table">
+                        <div class="order-row header">
+                            <span class="product-col">PRODUCT</span>
+                            <span class="subtotal-col">SUBTOTAL</span>
+                        </div>
+                        <div class="order-row">
+                            <span class="product-col">Classic wooden chair × 1</span>
+                            <span class="subtotal-col">299,00 EGP</span>
+                        </div>
+                        <div class="order-row subtotal">
+                            <span>Subtotal</span>
+                            <span>299,00 EGP</span>
+                        </div>
+                        <div class="order-row total">
+                            <span>Total</span>
+                            <span>299,00 EGP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Method Warning -->
+                <div class="payment-warning">
+                    <div class="warning-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="warning-text">
+                        <p>Sorry, it seems that there are no available payment methods. Please contact us if you require
+                            assistance or wish to make alternate arrangements.</p>
+                    </div>
+                </div>
+
+                <!-- Privacy Policy -->
+                <div class="privacy-policy">
+                    <p>Your personal data will be used to process your order, support your experience throughout this
+                        website, and for other purposes described in our <a href="#" class="privacy-link">privacy
+                            policy</a>.</p>
+                </div>
+
+                <!-- Place Order Button -->
+                <button class="place-order-btn">PLACE ORDER</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><img src="assets/facebook-f-brands-solid-full.svg" alt="Facebook"></a>
+                    <a href="#"><img src="assets/instagram-brands-solid-full.svg" alt="Instagram"></a>
+                    <a href="#"><img src="assets/x-twitter-brands-solid-full.svg" alt="Twitter"></a>
+                    <a href="#"><img src="assets/youtube-brands-solid-full.svg" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/checkout.js"></script>
+</body>
+
+</html>

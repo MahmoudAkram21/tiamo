@@ -58,8 +58,42 @@
           </form>
         </button>
         <!-- <button aria-label="Account"><i class="fa-regular fa-user"></i></button> -->
-        <button aria-label="Cart" class="cart">
-          <i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cart-count">0</span>
+        <button aria-label="Cart" class="cart has-items">
+          <i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cart-count">1</span>
+
+          <!-- Mini Cart Popup -->
+          <div class="mini-cart-popup">
+            <div class="mini-cart-header">
+              <h3 class="mini-cart-title">Shopping Cart</h3>
+            </div>
+
+            <div class="mini-cart-items">
+              <div class="mini-cart-item">
+                <div class="mini-cart-item-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=100&auto=format&fit=crop"
+                    alt="Classic wooden chair">
+                </div>
+                <div class="mini-cart-item-details">
+                  <h4 class="mini-cart-item-name">Classic wooden chair</h4>
+                  <div class="mini-cart-item-price">1 x 299,00 EGP</div>
+                </div>
+                <button class="mini-cart-item-remove" title="Remove item">
+                  <i class="fa-solid fa-times"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="mini-cart-subtotal">
+              <span class="subtotal-label">Subtotal:</span>
+              <span class="subtotal-amount">299,00 EGP</span>
+            </div>
+
+            <div class="mini-cart-actions">
+              <a href="cart.html" class="mini-cart-btn view-cart">VIEW CART</a>
+              <a href="checkout.html" class="mini-cart-btn checkout">CHECKOUT</a>
+            </div>
+          </div>
         </button>
       </div>
     </div>
@@ -108,13 +142,12 @@
   <section class="hero">
     <div class="container hero__inner">
       <div class="hero__content">
-        <div>
-
+        <div class="hero__text">
           <h1>Outfits That Make You Shine</h1>
           <p>
-            At imperdiet dui accumsan sit amet. Eros in cursus turpis massa. Duis id
-            ornare arcu odio ut. Cras fermentum odio eu feugiat pretium sit amet
-            facilisis magna.
+            At imperdiet dui accumsan sit amet. Eros in cursus turpis massa.
+            Duis id ornare arcu odio ut. Cras fermentum odio eu feugiat
+            pretium sit amet facilisis magna.
           </p>
           <a href="#" class="btn btn--primary">Shop Collection</a>
         </div>
@@ -123,24 +156,32 @@
           <div class="swiper hero__slider">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <figure class="card"><img
+                <figure class="card">
+                  <img
                     src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=900&auto=format&fit=crop"
-                    alt="Look 1" /></figure>
+                    alt="Look 1" />
+                </figure>
               </div>
               <div class="swiper-slide">
-                <figure class="card"><img
+                <figure class="card">
+                  <img
                     src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=900&auto=format&fit=crop"
-                    alt="Look 2" /></figure>
+                    alt="Look 2" />
+                </figure>
               </div>
               <div class="swiper-slide">
-                <figure class="card"><img
+                <figure class="card">
+                  <img
                     src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=900&auto=format&fit=crop"
-                    alt="Look 3" /></figure>
+                    alt="Look 3" />
+                </figure>
               </div>
               <div class="swiper-slide">
-                <figure class="card"><img
+                <figure class="card">
+                  <img
                     src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=900&auto=format&fit=crop"
-                    alt="Look 4" /></figure>
+                    alt="Look 4" />
+                </figure>
               </div>
             </div>
           </div>
@@ -168,169 +209,112 @@
       </div>
     </div>
   </section>
-
-  <!-- Branded Collections Slider -->
-  <section class="brand" aria-labelledby="brand-title">
+  <!-- Features / What We Provide -->
+  <section class="features" aria-labelledby="features-title">
     <div class="container">
-      <header class="brand__header">
-        <h2 id="brand-title">Branded Collections</h2>
-        <p class="brand__subtitle">Non pulvinar neque laoreet suspendisse interdum. Curabitur vitae nunc sed velit
-          dignissim.</p>
+      <header class="features__header">
+        <h2 id="features-title">What We Provide?</h2>
+        <p class="features__subtitle">
+          Lorem Ipsum is placeholder text commonly used in the graphic, print,
+          and publishing industries for previewing.
+        </p>
       </header>
 
-      <div class="swiper brand__slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide brand-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
-                alt="Women" />
-              <figcaption>Women</figcaption>
-              <a href="#" class="brand-slide__cta btn btn--light">Shop Women</a>
-            </figure>
+      <div class="features__grid">
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <!-- ticket icon -->
+            <i class="fa-solid fa-ticket" style="font-size: 36px; color: #ff4d4f"></i>
           </div>
-          <div class="swiper-slide brand-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Men" />
-              <figcaption>Men</figcaption>
-              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
-            </figure>
+          <h3 class="feature-card__title">Best Prices & Offers</h3>
+          <p class="feature-card__text">
+            There are many variations of passages of Lorem Ipsum available,
+            but the majority have suffered alteration in some form.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <!-- assortment boxes icon -->
+            <i class="fa-solid fa-boxes-stacked" style="font-size: 36px; color: #ff4d4f"></i>
           </div>
-          <div class="swiper-slide brand-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Men" />
-              <figcaption>Men</figcaption>
-              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
-            </figure>
+          <h3 class="feature-card__title">Wide Assortment</h3>
+          <p class="feature-card__text">
+            There are many variations of passages of Lorem Ipsum available,
+            but the majority have suffered alteration in some form.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <!-- delivery icon -->
+            <i class="fa-solid fa-truck" style="font-size: 36px; color: #ff4d4f"></i>
           </div>
-          <div class="swiper-slide brand-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Men" />
-              <figcaption>Men</figcaption>
-              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
-            </figure>
-          </div>
-          <div class="swiper-slide brand-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Men" />
-              <figcaption>Men</figcaption>
-              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
-            </figure>
-          </div>
-          <div class="swiper-slide brand-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Men" />
-              <figcaption>Men</figcaption>
-              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
-            </figure>
-          </div>
-          <div class="swiper-slide brand-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Men" />
-              <figcaption>Men</figcaption>
-              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
-            </figure>
-          </div>
-          <div class="swiper-slide brand-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Men" />
-              <figcaption>Men</figcaption>
-              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
-            </figure>
-          </div>
-          <div class="swiper-slide brand-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Men" />
-              <figcaption>Men</figcaption>
-              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
-            </figure>
-          </div>
-        </div>
+          <h3 class="feature-card__title">Free Delivery</h3>
+          <p class="feature-card__text">
+            There are many variations of passages of Lorem Ipsum available,
+            but the majority have suffered alteration in some form.
+          </p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Our Categories Slider -->
-  <section class="categories" aria-labelledby="categories-title">
+  <!-- Collections / Categories -->
+  <section class="collections" aria-labelledby="collections-title">
     <div class="container">
-      <header class="categories__header">
-        <h2 id="categories-title">Our Categories</h2>
-      </header>
+      <h2 class="collections__title" id="collections-title">
+        Explore Our Collections
+      </h2>
+      <div class="collections__grid">
+        <!-- Tall left card -->
+        <article class="collection-card collection-card--tall">
+          <img class="collection-card__img"
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
+            alt="Signature Collections" loading="lazy" />
+          <div class="collection-card__overlay"></div>
+          <div class="collection-card__content">
+            <h3>Signature Collections</h3>
+            <a href="#" class="btn btn--dark btn--pill">Shop Now</a>
+          </div>
+        </article>
 
-      <div class="swiper categories__slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide cat-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
-                alt="Cooking" />
-              <figcaption>
-                <strong>COOKING</strong>
-                <span>12 products</span>
-              </figcaption>
-            </figure>
+        <!-- Top right card -->
+        <article class="collection-card">
+          <img class="collection-card__img"
+            src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1600&auto=format&fit=crop"
+            alt="Toned Collections" loading="lazy" />
+          <div class="collection-card__overlay"></div>
+          <div class="collection-card__content">
+            <h3>Toned Collections</h3>
+            <a href="#" class="btn btn--dark btn--pill">Shop Now</a>
           </div>
-          <div class="swiper-slide cat-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
-                alt="Cooking" />
-              <figcaption>
-                <strong>COOKING</strong>
-                <span>12 products</span>
-              </figcaption>
-            </figure>
+        </article>
+
+        <!-- Bottom right card -->
+        <article class="collection-card">
+          <img class="collection-card__img"
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
+            alt="Shorts & Capris" loading="lazy" />
+          <div class="collection-card__overlay"></div>
+          <div class="collection-card__content">
+            <h3>Shorts & Capris</h3>
+            <a href="#" class="btn btn--dark btn--pill">Shop Now</a>
           </div>
-          <div class="swiper-slide cat-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
-                alt="Cooking" />
-              <figcaption>
-                <strong>COOKING</strong>
-                <span>12 products</span>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="swiper-slide cat-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
-                alt="Cooking" />
-              <figcaption>
-                <strong>COOKING</strong>
-                <span>12 products</span>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="swiper-slide cat-slide">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
-                alt="Cooking" />
-              <figcaption>
-                <strong>COOKING</strong>
-                <span>12 products</span>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-        <div class="categories-prev" aria-label="Prev">&#10094;</div>
-        <div class="categories-next" aria-label="Next">&#10095;</div>
+        </article>
       </div>
     </div>
   </section>
-
   <!-- Featured Products -->
   <section class="products" aria-labelledby="products-title">
     <div class="container">
       <header class="products__header">
         <p class="eyebrow">Welcome to Tiamo</p>
         <h2 id="products-title">Featured Products</h2>
-        <p class="products__subtitle">Nec sem consequat mi gravida augue suspendisse condimentum condimentum augue mi
-          gravida augue.</p>
+        <p class="products__subtitle">
+          Nec sem consequat mi gravida augue suspendisse condimentum
+          condimentum augue mi gravida augue.
+        </p>
       </header>
 
       <div class="products__grid">
@@ -558,98 +542,168 @@
             <a href="#" class="product-card__cta">Add To Cart</a>
           </div>
         </article>
-
-
       </div>
     </div>
   </section>
-  <!-- Features / What We Provide -->
-  <section class="features" aria-labelledby="features-title">
+
+  <!-- Branded Collections Slider -->
+  <section class="brand" aria-labelledby="brand-title">
     <div class="container">
-      <header class="features__header">
-        <h2 id="features-title">What We Provide?</h2>
-        <p class="features__subtitle">Lorem Ipsum is placeholder text commonly used in the graphic, print, and
-          publishing industries for previewing.</p>
+      <header class="brand__header">
+        <h2 id="brand-title">Branded Collections</h2>
+        <p class="brand__subtitle">
+          Non pulvinar neque laoreet suspendisse interdum. Curabitur vitae
+          nunc sed velit dignissim.
+        </p>
       </header>
 
-      <div class="features__grid">
-        <article class="feature-card">
-          <div class="feature-card__icon" aria-hidden="true">
-            <!-- ticket icon -->
-            <i class="fa-solid fa-ticket" style="font-size:36px;color:#ff4d4f"></i>
+      <div class="swiper brand__slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide brand-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
+                alt="Women" />
+              <figcaption>Women</figcaption>
+              <a href="#" class="brand-slide__cta btn btn--light">Shop Women</a>
+            </figure>
           </div>
-          <h3 class="feature-card__title">Best Prices & Offers</h3>
-          <p class="feature-card__text">There are many variations of passages of Lorem Ipsum available, but the majority
-            have suffered alteration in some form.</p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-card__icon" aria-hidden="true">
-            <!-- assortment boxes icon -->
-            <i class="fa-solid fa-boxes-stacked" style="font-size:36px;color:#ff4d4f"></i>
+          <div class="swiper-slide brand-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
+                alt="Men" />
+              <figcaption>Men</figcaption>
+              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
+            </figure>
           </div>
-          <h3 class="feature-card__title">Wide Assortment</h3>
-          <p class="feature-card__text">There are many variations of passages of Lorem Ipsum available, but the majority
-            have suffered alteration in some form.</p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-card__icon" aria-hidden="true">
-            <!-- delivery icon -->
-            <i class="fa-solid fa-truck" style="font-size:36px;color:#ff4d4f"></i>
+          <div class="swiper-slide brand-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
+                alt="Men" />
+              <figcaption>Men</figcaption>
+              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
+            </figure>
           </div>
-          <h3 class="feature-card__title">Free Delivery</h3>
-          <p class="feature-card__text">There are many variations of passages of Lorem Ipsum available, but the majority
-            have suffered alteration in some form.</p>
-        </article>
+          <div class="swiper-slide brand-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
+                alt="Men" />
+              <figcaption>Men</figcaption>
+              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
+            </figure>
+          </div>
+          <div class="swiper-slide brand-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
+                alt="Men" />
+              <figcaption>Men</figcaption>
+              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
+            </figure>
+          </div>
+          <div class="swiper-slide brand-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
+                alt="Men" />
+              <figcaption>Men</figcaption>
+              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
+            </figure>
+          </div>
+          <div class="swiper-slide brand-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
+                alt="Men" />
+              <figcaption>Men</figcaption>
+              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
+            </figure>
+          </div>
+          <div class="swiper-slide brand-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
+                alt="Men" />
+              <figcaption>Men</figcaption>
+              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
+            </figure>
+          </div>
+          <div class="swiper-slide brand-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop"
+                alt="Men" />
+              <figcaption>Men</figcaption>
+              <a href="#" class="brand-slide__cta btn btn--light">Shop Men</a>
+            </figure>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Our Categories Slider -->
+  <section class="categories" aria-labelledby="categories-title">
+    <div class="container">
+      <header class="categories__header">
+        <h2 id="categories-title">Our Categories</h2>
+      </header>
+
+      <div class="swiper categories__slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide cat-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
+                alt="Cooking" />
+              <figcaption>
+                <strong>COOKING</strong>
+                <span>12 products</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide cat-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
+                alt="Cooking" />
+              <figcaption>
+                <strong>COOKING</strong>
+                <span>12 products</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide cat-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
+                alt="Cooking" />
+              <figcaption>
+                <strong>COOKING</strong>
+                <span>12 products</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide cat-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
+                alt="Cooking" />
+              <figcaption>
+                <strong>COOKING</strong>
+                <span>12 products</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide cat-slide">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
+                alt="Cooking" />
+              <figcaption>
+                <strong>COOKING</strong>
+                <span>12 products</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="categories-prev" aria-label="Prev">&#10094;</div>
+        <div class="categories-next" aria-label="Next">&#10095;</div>
+      </div>
+    </div>
+  </section>
+
   <!-- end Hero -->
 
-  <!-- Collections / Categories -->
-  <section class="collections" aria-labelledby="collections-title">
-    <div class="container">
-      <h2 class="collections__title" id="collections-title">Explore Our Collections</h2>
-      <div class="collections__grid">
-        <!-- Tall left card -->
-        <article class="collection-card collection-card--tall">
-          <img class="collection-card__img"
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
-            alt="Signature Collections" loading="lazy" />
-          <div class="collection-card__overlay"></div>
-          <div class="collection-card__content">
-            <h3>Signature Collections</h3>
-            <a href="#" class="btn btn--dark btn--pill">Shop Now</a>
-          </div>
-        </article>
-
-        <!-- Top right card -->
-        <article class="collection-card">
-          <img class="collection-card__img"
-            src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1600&auto=format&fit=crop"
-            alt="Toned Collections" loading="lazy" />
-          <div class="collection-card__overlay"></div>
-          <div class="collection-card__content">
-            <h3>Toned Collections</h3>
-            <a href="#" class="btn btn--dark btn--pill">Shop Now</a>
-          </div>
-        </article>
-
-        <!-- Bottom right card -->
-        <article class="collection-card">
-          <img class="collection-card__img"
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
-            alt="Shorts & Capris" loading="lazy" />
-          <div class="collection-card__overlay"></div>
-          <div class="collection-card__content">
-            <h3>Shorts & Capris</h3>
-            <a href="#" class="btn btn--dark btn--pill">Shop Now</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
   <!-- Our best seller -->
   <section class="categories" aria-labelledby="categories-title">
     <div class="container">
@@ -778,7 +832,7 @@
             </article>
           </div>
 
-          <div class="swiper-slide ">
+          <div class="swiper-slide">
             <article class="product-card">
               <a href="#" class="product-card__media" aria-label="Open product">
                 <img class="product-card__img product-card__img--primary"
@@ -807,7 +861,6 @@
               </div>
             </article>
           </div>
-
         </div>
         <div class="categories-prev" aria-label="Prev">&#10094;</div>
         <div class="categories-next" aria-label="Next">&#10095;</div>
@@ -824,10 +877,18 @@
         <div class="payday__eyebrow">PAYDAY</div>
         <h2 id="payday-title" class="payday__title">SALE NOW</h2>
         <div class="payday__countdown" role="timer" aria-live="polite" data-end="2025-12-31T23:59:59Z">
-          <div class="payday__time"><span class="num" data-unit="days">00</span><span class="lbl">Days</span></div>
-          <div class="payday__time"><span class="num" data-unit="hours">00</span><span class="lbl">Hr</span></div>
-          <div class="payday__time"><span class="num" data-unit="minutes">00</span><span class="lbl">Min</span></div>
-          <div class="payday__time"><span class="num" data-unit="seconds">00</span><span class="lbl">Sc</span></div>
+          <div class="payday__time">
+            <span class="num" data-unit="days">00</span><span class="lbl">Days</span>
+          </div>
+          <div class="payday__time">
+            <span class="num" data-unit="hours">00</span><span class="lbl">Hr</span>
+          </div>
+          <div class="payday__time">
+            <span class="num" data-unit="minutes">00</span><span class="lbl">Min</span>
+          </div>
+          <div class="payday__time">
+            <span class="num" data-unit="seconds">00</span><span class="lbl">Sc</span>
+          </div>
         </div>
         <a href="#" class="btn btn--primary payday__cta">Shop Now</a>
       </div>
@@ -838,13 +899,22 @@
   <section class="deals" aria-labelledby="deals-title">
     <div class="container">
       <div class="deals__header">
-        <h2 id="deals-title" class="deals__title"><i class="fa-solid fa-gift" aria-hidden="true"></i> Deals of the Day
+        <h2 id="deals-title" class="deals__title">
+          <i class="fa-solid fa-gift" aria-hidden="true"></i> Deals of the Day
         </h2>
         <div class="deals__countdown" role="timer" aria-live="polite" data-end="2025-12-31T23:59:59Z">
-          <div class="deals__time"><span class="num" data-unit="days">00</span><span class="lbl">Days</span></div>
-          <div class="deals__time"><span class="num" data-unit="hours">00</span><span class="lbl">Hr</span></div>
-          <div class="deals__time"><span class="num" data-unit="minutes">00</span><span class="lbl">Min</span></div>
-          <div class="deals__time"><span class="num" data-unit="seconds">00</span><span class="lbl">Sec</span></div>
+          <div class="deals__time">
+            <span class="num" data-unit="days">00</span><span class="lbl">Days</span>
+          </div>
+          <div class="deals__time">
+            <span class="num" data-unit="hours">00</span><span class="lbl">Hr</span>
+          </div>
+          <div class="deals__time">
+            <span class="num" data-unit="minutes">00</span><span class="lbl">Min</span>
+          </div>
+          <div class="deals__time">
+            <span class="num" data-unit="seconds">00</span><span class="lbl">Sec</span>
+          </div>
         </div>
       </div>
 
@@ -860,12 +930,15 @@
                 src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop"
                 alt="Woman Top Blue alternate" loading="lazy" />
               <div class="product-card__actions" aria-label="quick actions">
-                <button title="Compare" aria-label="Compare" class="icon-btn"><i class="fa-solid fa-right-left"
-                    aria-hidden="true"></i></button>
-                <button title="Quick View" aria-label="Quick View" class="icon-btn"><i class="fa-regular fa-eye"
-                    aria-hidden="true"></i></button>
-                <button title="Wishlist" aria-label="Wishlist" class="icon-btn"><i class="fa-regular fa-heart"
-                    aria-hidden="true"></i></button>
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left" aria-hidden="true"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
               </div>
             </a>
             <div class="product-card__info">
@@ -885,12 +958,15 @@
                 src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop"
                 alt="Wine bottle lantern alt" loading="lazy" />
               <div class="product-card__actions" aria-label="quick actions">
-                <button title="Compare" aria-label="Compare" class="icon-btn"><i class="fa-solid fa-right-left"
-                    aria-hidden="true"></i></button>
-                <button title="Quick View" aria-label="Quick View" class="icon-btn"><i class="fa-regular fa-eye"
-                    aria-hidden="true"></i></button>
-                <button title="Wishlist" aria-label="Wishlist" class="icon-btn"><i class="fa-regular fa-heart"
-                    aria-hidden="true"></i></button>
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left" aria-hidden="true"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
               </div>
             </a>
             <div class="product-card__info">
@@ -910,12 +986,15 @@
                 src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=1200&auto=format&fit=crop"
                 alt="IPhone clock alt" loading="lazy" />
               <div class="product-card__actions" aria-label="quick actions">
-                <button title="Compare" aria-label="Compare" class="icon-btn"><i class="fa-solid fa-right-left"
-                    aria-hidden="true"></i></button>
-                <button title="Quick View" aria-label="Quick View" class="icon-btn"><i class="fa-regular fa-eye"
-                    aria-hidden="true"></i></button>
-                <button title="Wishlist" aria-label="Wishlist" class="icon-btn"><i class="fa-regular fa-heart"
-                    aria-hidden="true"></i></button>
+                <button title="Compare" aria-label="Compare" class="icon-btn">
+                  <i class="fa-solid fa-right-left" aria-hidden="true"></i>
+                </button>
+                <button title="Quick View" aria-label="Quick View" class="icon-btn">
+                  <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                </button>
+                <button title="Wishlist" aria-label="Wishlist" class="icon-btn">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
               </div>
             </a>
             <div class="product-card__info">
@@ -942,26 +1021,37 @@
     <div class="tiamo-bg-text" aria-hidden="true">Tiamo</div>
     <div class="tiamo-animated-content">
       <div class="tiamo-animated-left">
-        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop" alt="Model standing" />
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop"
+          alt="Model standing" />
       </div>
       <div class="tiamo-animated-center">
         <h2 class="tiamo-animated-title">Versatile Clothing's For Style</h2>
-        <p class="tiamo-animated-desc">Maecenas sit amet enim diam, luctus nulla quis, euismod ante. Nam risus erat, scelerisque rutrum ligula sit amet, molestie pellentesque diam.</p>
+        <p class="tiamo-animated-desc">
+          Maecenas sit amet enim diam, luctus nulla quis, euismod ante. Nam
+          risus erat, scelerisque rutrum ligula sit amet, molestie
+          pellentesque diam.
+        </p>
         <a href="#" class="tiamo-animated-btn">Shop Collection</a>
       </div>
       <div class="tiamo-animated-right">
-        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" alt="Model sitting" />
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop"
+          alt="Model sitting" />
       </div>
     </div>
   </section>
-  
+
   <!-- Story / Video Section -->
-  <section class="story " aria-labelledby="story-title">
+  <section class="story" aria-labelledby="story-title">
     <div class="container story__inner">
       <div class="story__left">
-        <h2 id="story-title" class="story__title">Elegant styles to enhance your elegance</h2>
-        <p class="story__subtitle">Zulsa sed risus suscipit justo maximus pulvinar. Integer neque felis, egestas a
-          euismod in, pulvinar et nisi aliquam ullam. Nulla tincidunt convallis bibendum.</p>
+        <h2 id="story-title" class="story__title">
+          Elegant styles to enhance your elegance
+        </h2>
+        <p class="story__subtitle">
+          Zulsa sed risus suscipit justo maximus pulvinar. Integer neque
+          felis, egestas a euismod in, pulvinar et nisi aliquam ullam. Nulla
+          tincidunt convallis bibendum.
+        </p>
 
         <ul class="story__features" aria-label="Key benefits">
           <li class="story__feature">
@@ -999,24 +1089,26 @@
       <div class="story__right">
         <video class="story__video" controlslist="nodownload" autoplay muted loop playsinline
           aria-label="Our craftsmanship video">
-          <source src="./assets/tiamo-story.mp4" type="video/mp4">
+          <source src="./assets/tiamo-story.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
   </section>
-
 
   <!-- Product Showcase Section -->
   <section class="product-showcase" aria-labelledby="product-showcase-title">
     <div class="container">
       <header class="product-showcase__header">
         <h2 id="product-showcase-title">Shop the Latest</h2>
-        <p class="product-showcase__subtitle">Discover our newest arrivals and best sellers</p>
+        <p class="product-showcase__subtitle">
+          Discover our newest arrivals and best sellers
+        </p>
       </header>
       <div class="product-showcase__grid">
         <!-- Card 1 -->
         <div class="product-showcase__card">
-          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop" alt="Colorblock Top" />
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop"
+            alt="Colorblock Top" />
           <div class="product-showcase__overlay">
             <h3>Colorblock Top</h3>
             <p>Trendy colorblock crop top for summer.</p>
@@ -1026,7 +1118,8 @@
         </div>
         <!-- Card 2 -->
         <div class="product-showcase__card">
-          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" alt="White Tee" />
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop"
+            alt="White Tee" />
           <div class="product-showcase__overlay">
             <h3>White Tee</h3>
             <p>Classic white t-shirt for everyday comfort.</p>
@@ -1036,7 +1129,8 @@
         </div>
         <!-- Card 3 -->
         <div class="product-showcase__card">
-          <img src="https://images.unsplash.com/photo-1469398715555-76331e0b1b47?q=80&w=800&auto=format&fit=crop" alt="Beige Sweater" />
+          <img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=800&auto=format&fit=crop"
+            alt="Beige Sweater" />
           <div class="product-showcase__overlay">
             <h3>Beige Sweater</h3>
             <p>Soft knit sweater, perfect for layering.</p>
@@ -1046,7 +1140,8 @@
         </div>
         <!-- Card 4 -->
         <div class="product-showcase__card">
-          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=800&auto=format&fit=crop" alt="Blue Peplum" />
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=800&auto=format&fit=crop"
+            alt="Blue Peplum" />
           <div class="product-showcase__overlay">
             <h3>Blue Peplum</h3>
             <p>Chic blue peplum top for a stylish look.</p>
@@ -1056,7 +1151,8 @@
         </div>
         <!-- Card 5 -->
         <div class="product-showcase__card">
-          <img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=800&auto=format&fit=crop" alt="Cropped Shirt" />
+          <img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=800&auto=format&fit=crop"
+            alt="Cropped Shirt" />
           <div class="product-showcase__overlay">
             <h3>Cropped Shirt</h3>
             <p>Edgy cropped white shirt with modern fit.</p>
@@ -1066,7 +1162,8 @@
         </div>
         <!-- Card 6 -->
         <div class="product-showcase__card">
-          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop" alt="Mesh Crop Top" />
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop"
+            alt="Mesh Crop Top" />
           <div class="product-showcase__overlay">
             <h3>Mesh Crop Top</h3>
             <p>Breathable mesh crop top for a bold look.</p>
@@ -1076,7 +1173,8 @@
         </div>
         <!-- Card 7 -->
         <div class="product-showcase__card">
-          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" alt="Red Lace Top" />
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop"
+            alt="Red Lace Top" />
           <div class="product-showcase__overlay">
             <h3>Red Lace Top</h3>
             <p>Elegant red lace crop for special occasions.</p>
@@ -1086,7 +1184,8 @@
         </div>
         <!-- Card 8 -->
         <div class="product-showcase__card">
-          <img src="https://images.unsplash.com/photo-1469398715555-76331e0b1b47?q=80&w=800&auto=format&fit=crop" alt="Grey Knit" />
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop"
+            alt="Grey Knit" />
           <div class="product-showcase__overlay">
             <h3>Grey Knit</h3>
             <p>Cozy grey knit for chilly days.</p>
@@ -1106,21 +1205,24 @@
           <h3 class="newsletter-products__title">FEATURED PRODUCTS</h3>
           <ul class="newsletter-products__list">
             <li>
-              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=80&auto=format&fit=crop" alt="Eames lounge chair" />
+              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=80&auto=format&fit=crop"
+                alt="Eames lounge chair" />
               <div>
                 <span class="newsletter-products__product-name">Eames lounge chair</span>
                 <span class="newsletter-products__product-price">399.00 EGP</span>
               </div>
             </li>
             <li>
-              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=80&auto=format&fit=crop" alt="Classic wooden chair" />
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=80&auto=format&fit=crop"
+                alt="Classic wooden chair" />
               <div>
                 <span class="newsletter-products__product-name">Classic wooden chair</span>
                 <span class="newsletter-products__product-price">299.00 EGP</span>
               </div>
             </li>
             <li>
-              <img src="https://images.unsplash.com/photo-1469398715555-76331e0b1b47?q=80&w=80&auto=format&fit=crop" alt="Wooden single drawer" />
+              <img src="https://images.unsplash.com/photo-1469398715555-76331e0b1b47?q=80&w=80&auto=format&fit=crop"
+                alt="Wooden single drawer" />
               <div>
                 <span class="newsletter-products__product-name">Wooden single drawer</span>
                 <span class="newsletter-products__product-price"><span class="old">299.00 EGP</span> 89.00 EGP</span>
@@ -1132,21 +1234,24 @@
           <h3 class="newsletter-products__title">NEW PRODUCTS</h3>
           <ul class="newsletter-products__list">
             <li>
-              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=80&auto=format&fit=crop" alt="Eames lounge chair" />
+              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=80&auto=format&fit=crop"
+                alt="Eames lounge chair" />
               <div>
                 <span class="newsletter-products__product-name">Eames lounge chair</span>
                 <span class="newsletter-products__product-price">399.00 EGP</span>
               </div>
             </li>
             <li>
-              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=80&auto=format&fit=crop" alt="Classic wooden chair" />
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=80&auto=format&fit=crop"
+                alt="Classic wooden chair" />
               <div>
                 <span class="newsletter-products__product-name">Classic wooden chair</span>
                 <span class="newsletter-products__product-price">299.00 EGP</span>
               </div>
             </li>
             <li>
-              <img src="https://images.unsplash.com/photo-1469398715555-76331e0b1b47?q=80&w=80&auto=format&fit=crop" alt="Wooden single drawer" />
+              <img src="https://images.unsplash.com/photo-1469398715555-76331e0b1b47?q=80&w=80&auto=format&fit=crop"
+                alt="Wooden single drawer" />
               <div>
                 <span class="newsletter-products__product-name">Wooden single drawer</span>
                 <span class="newsletter-products__product-price"><span class="old">299.00 EGP</span> 89.00 EGP</span>
@@ -1159,7 +1264,10 @@
         <div class="newsletter-box">
           <span class="newsletter-box__mini-title">TO WOODMART</span>
           <h3 class="newsletter-box__title">REGISTER FOR OUR NEWSLETTER</h3>
-          <p class="newsletter-box__desc">Sign up for all the news about our last arrivals and get an exclusive early access shopping.</p>
+          <p class="newsletter-box__desc">
+            Sign up for all the news about our last arrivals and get an
+            exclusive early access shopping.
+          </p>
           <form class="newsletter-box__form">
             <input type="email" placeholder="Your email address" required />
             <button type="submit">SIGN UP</button>
@@ -1235,7 +1343,7 @@
   <!-- end Footer -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/all.min.js"></script>
-  
+
   <script src="./js/main.js"></script>
 </body>
 
