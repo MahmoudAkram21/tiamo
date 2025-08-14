@@ -358,6 +358,22 @@ ul {
   position: relative;
 }
 
+/* Ensure mini-cart is hidden by default */
+.cart .mini-cart-popup {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-10px) !important;
+  pointer-events: none !important;
+}
+
+/* Show mini-cart only on hover */
+.cart:hover .mini-cart-popup {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
 .mini-cart-popup {
   position: absolute;
   top: 100%;
@@ -373,13 +389,11 @@ ul {
   transform: translateY(-10px);
   transition: all 0.3s ease;
   margin-top: 10px;
+  pointer-events: none;
+  display: block;
 }
 
-.cart:hover .mini-cart-popup {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
+
 
 .mini-cart-popup::before {
   content: '';
@@ -586,6 +600,19 @@ ul {
   .mini-cart-popup::before,
   .mini-cart-popup::after {
     right: 28px;
+  }
+}
+
+/* Touch device support */
+@media (hover: none) {
+  .cart .mini-cart-popup {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  
+  .cart:active .mini-cart-popup {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 
